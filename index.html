@@ -12,7 +12,22 @@
     <div class="container box">
       <h1 class="title has-text-centered"><span class="has-text-primary">My</span>Library</h1> 
       <div class="columns is-centered">  
-        <div class="column is-narrow">       
+        <div class="column is-narrow">
+          <form id="l-form">
+            <div class="form field">
+              <label for="title" class="label">Title</label>
+              <input type="text" id="title" class="form-control input">
+            </div>
+            <div class="form-bulma field">
+              <label for="author" class="label">Author</label>
+              <input type="text" id="author" class="form-control input">
+            </div>
+            <div class="form-bulma field">
+              <label for="pages" class="label">Number of pages</label>
+              <input type="text" id="pages" class="form-control input">
+            </div>
+            <input type="submit" class="button is-primary is-fullwidth" value="Save">   
+          </form>   
           <table class="table mt-6">
             <thead>
               <tr>
