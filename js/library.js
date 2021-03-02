@@ -41,7 +41,7 @@ class UI {
             <td class="has-text-centered">${book.author}</td>
             <td class="has-text-centered">${book.pages}</td>
             <td class="has-text-centered"><label class="checkbox"><input type="checkbox">Read it</label</td>
-            <td class="has-text-centered"><a href='#' class='bulma delete'>X</a></td>
+            <td class="has-text-centered"><a href='#' class='delete'>X</a></td>
         `;
         
 
@@ -51,6 +51,17 @@ class UI {
       if(el.classList.contains('delete')) {
         el.parentElement.parentElement.remove();
       }
+    }
+
+    static showAlert(message, className) {
+      const div = document.createElement('div');
+      div.className = `notification is-${className}`;
+      div.appendChild(document.createTextNode(message));
+      const container = document.querySelector('.column');
+      const form = document.querySelector('#l-form');
+      container.insertBefore(div, form);
+      // Timer
+      setTimeout(() => document.querySelector('.notification').remove(), 1800);
     }
 
     static clearFields() {
@@ -77,19 +88,28 @@ document.querySelector('#l-form').addEventListener('submit', (e) => {
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
 
-    // instatiate book 
-    const book = new Book(title, author, pages);
+    // Validate
+    if(title === '' || author === '' || pages === '') {
+      UI.showAlert('You need to fill all the fields', 'warning');
+    } else {
+        // instatiate book 
+      const book = new Book(title, author, pages);
 
-    // add book to UI 
+      // add book to UI 
+      UI.addBookToLibrary(book);
 
-    UI.addBookToLibrary(book);
+      // Success message
+      UI.showAlert('Book Added', 'primary');
 
-    // Clear fields 
-    UI.clearFields();
-
+      // Clear fields 
+      UI.clearFields();
+    }
 });
 
 // Event: delet book 
 document.querySelector('#bookList').addEventListener('click', (e) => {
   UI.deleteBook(e.target)
+
+  // Delete message
+  UI.showAlert('Book Removed', 'danger');
 });
