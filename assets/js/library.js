@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 class Book {
   constructor(title, author, pages) {
     this.title = title;
@@ -84,6 +85,9 @@ class UI {
   }
 }
 
+function showForm() { // eslint-disable-line no-unused-vars
+  document.getElementById('l-form').style.display = 'block';
+}
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
@@ -113,8 +117,3 @@ document.querySelector('#bookList').addEventListener('click', (e) => {
 
   Store.removeBook(e.target.parentElement.parentElement.firstElementChild.textContent);
 });
-
-
-function showForm() {
-  document.getElementById('l-form').style.display = 'block';
-}
