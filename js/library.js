@@ -37,11 +37,11 @@ class UI {
         const row = document.createElement('tr'); 
 
         row.innerHTML = `
-            <td>${book.title}</td>
-            <td>${book.author}</td>
-            <td>${book.pages}</td>
-            <td><a href='#' class='bulma delete'>X</a></td>
-            <td><a href='#' class='bulma swich'></a></td>
+            <td class="has-text-centered">${book.title}</td>
+            <td class="has-text-centered">${book.author}</td>
+            <td class="has-text-centered">${book.pages}</td>
+            <td class="has-text-centered"><a href='#' class='bulma swich'></a></td>
+            <td class="has-text-centered"><a href='#' class='bulma delete'>X</a></td>
         `;
 
         list.appendChild(row);
