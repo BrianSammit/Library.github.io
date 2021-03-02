@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 document.querySelector('#l-form').addEventListener('submit', (e) => {
     // Prevent actual submit
-    e.preventDefault();
 
     //Get form values 
     const title = document.querySelector('#title').value;
