@@ -40,8 +40,8 @@ This is a project that contains a small Library app, that was created with Javas
 
 👤 **Miguel Ricaño**
 
-- Github: @mricanho
-- Linkedin: Miguel Ricaño
+- Github: [@mricanho](https://github.com/mricanho)
+- Linkedin: [Miguel Ricaño](https://www.linkedin.com/in/mricanho/)
 
 ## 🤝 Contributing
 
