@@ -129,11 +129,15 @@ document.querySelector('#l-form').addEventListener('submit', (e) => {
 
 // Event: delet book 
 document.querySelector('#bookList').addEventListener('click', (e) => {
-UI.deleteBook(e.target)
+  UI.deleteBook(e.target)
 
-// Delete message
-UI.showAlert('Book Removed', 'danger');
+  // Delete message
+  UI.showAlert('Book Removed', 'danger');
+
+  // Remove book from store
+  Store.removeBook(e.target.parentElement.parentElement.firstElementChild.textContent);
 });
+
 
 // Show formm
 
