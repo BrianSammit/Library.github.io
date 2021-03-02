@@ -27,7 +27,7 @@ class UI {
           <td class="has-text-centered">${book.title}</td>
           <td class="has-text-centered">${book.author}</td>
           <td class="has-text-centered">${book.pages}</td>
-          <td class="has-text-centered"><label class="checkbox"><input type="checkbox">Read it</label</td>
+          <td class="has-text-centered"><label class="checkbox"><input type="checkbox"></label</td>
           <td class="has-text-centered"><a href='#' class='delete'>X</a></td>
       `;
       

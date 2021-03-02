@@ -1,3 +1,7 @@
 #l-form {
   display: none;
 }
+
+.delete {
+  background-color: red;
+}
