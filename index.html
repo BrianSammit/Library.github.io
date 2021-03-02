@@ -11,20 +11,24 @@
   <section class="section">
     <div class="container">
       <h1 class="title has-text-centered"><span class="has-text-primary">My</span>Library</h1> 
-      <div class="column">         
-        <table class="table box mt-6">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Number of Pages</th>
-              <th>Status</th>
-            </tr>
-          </thead>
+      <div class="columns is-centered">  
+        <div class="column is-narrow">       
+          <table class="table box mt-6">
+            <thead>
+              <tr>
+                <th style="width: 200px;" class="has-text-centered">Title</th>
+                <th style="width: 200px;" class="has-text-centered">Author</th>
+                <th style="width: 200px;" class="has-text-centered">Number of Pages</th>
+                <th style="width: 200px;" class="has-text-centered">Status</th>
+              </tr>
+            </thead>
+            <tbody id="bookList"></tbody>
+          </table>
+          <a href="form.html" type="submit" class="button is-primary mt-3 is-normal is-pulled-right" value="Add book">Add Book</a>   
         </div>
-        <tbody id="bookList"></tbody>
-      </table>
-      <a href="form.html" type="submit" class="button is-primary mt-3" value="Add book">Add Book</a>   
+        
+      </div>
+     
     </div>
   </section>
   <script src="js/library.js"></script>
