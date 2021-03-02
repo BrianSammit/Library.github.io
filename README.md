@@ -2,12 +2,13 @@
 
 This is a project that contains a small Library app, that was created with Javascript, HTML, Bootstrap and, DOM. In this app you can store a new book, see the books that are stored, you can check if is already read or not, and you can delete it.
 
-![screenshot]()
-![screenshot]()
+![screenshot](assets/img/screen.png)
+![screenshot](assets/img/screen-1.png)
+![screenshot](assets/img/screen-2.png)
 
 ## Live demo
 
-[live demo]()
+[live demo](https://briansammit.github.io/Library.github.io/)
 
 ## Built With
 
@@ -21,14 +22,6 @@ This is a project that contains a small Library app, that was created with Javas
 - Run the following command - `git clone https://github.com/BrianSammit/Library.git`
 - Cd into the directory - `cd Library`
 - Open the live server on your VScode `Alt + L` then `Alt + o`
-
-
-## How to test it
-
-- Open your terminal 
-- Cd into the directory - `cd Rails_capstone` 
-- Then run `rspec`
-- You should see the test results. 
 
 ## Author
 
