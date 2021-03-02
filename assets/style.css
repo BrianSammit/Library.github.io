@@ -5,3 +5,5 @@
 .delete {
   background-color: red;
 }
+
+th { width: 200px; }
