@@ -67,7 +67,6 @@ class UI {
       UI.showAlert('Book Removed', 'danger');
       el.parentElement.parentElement.remove();
     }
-
   }
 
   static showAlert(message, className) {
@@ -93,6 +92,11 @@ function showForm() { // eslint-disable-line no-unused-vars
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
+function change() { // eslint-disable-line no-unused-vars
+  const elem = document.getElementById('toggle');
+  if (elem.innerHTML === 'Read') elem.innerHTML = 'Unread';
+  else elem.innerHTML = 'Read';
+}
 
 document.querySelector('#l-form').addEventListener('submit', (e) => {
   // Prevent actual submit
@@ -116,9 +120,3 @@ document.querySelector('#bookList').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
   Store.removeBook(e.target.parentElement.parentElement.firstElementChild.textContent);
 });
-
-function change() {
-    let elem = document.getElementById("toggle");
-    if (elem.innerHTML=="Read") elem.innerHTML = "Unread";
-    else elem.innerHTML = "Read";
-}
