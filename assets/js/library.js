@@ -1,6 +1,4 @@
 /* eslint-disable max-classes-per-file */
-
-const readInput = document.querySelector('#read');
 class Book {
   constructor(title, author, pages, read) {
     this.title = title;
@@ -42,6 +40,12 @@ class Store {
   }
 }
 
+function change(e) {
+  const elem = document.getElementById(e.target.id);
+  if (elem.innerHTML === 'Read') elem.innerHTML = 'Unread';
+  else elem.innerHTML = 'Read';
+}
+
 class UI {
   static displayBooks() {
     const books = Store.getBooks();
@@ -52,19 +56,17 @@ class UI {
   static addBookToLibrary(book) {
     const list = document.querySelector('#bookList');
     const row = document.createElement('tr');
-    const read = readInput.checked;
-    const id = this.id;
-
     row.innerHTML = `
           <td class="has-text-centered">${book.title}</td>
           <td class="has-text-centered">${book.author}</td>
           <td class="has-text-centered">${book.pages}</td>
-          <td class="has-text-centered"><button class="button is-small is-primary" onclick="change()" value="Read">Read</button></td>
+          <td class="has-text-centered"><button class="button is-small is-primary" id=${book.id} value="Read">Read</button></td>
           <td class="has-text-centered"><a href='#' id="delete" class='delete'>X</a></td>
       `;
-    row.setAttribute('id', book.id)
-
+    // row.setAttribute('id', book.id)
     list.appendChild(row);
+    const td = document.getElementById(book.id);
+    td.addEventListener('click', (e) => change(e));
   }
 
   static deleteBook(el) {
@@ -96,12 +98,6 @@ function showForm() { // eslint-disable-line no-unused-vars
 }
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
-
-function change() { // eslint-disable-line no-unused-vars
-  const elem = document.getElementById('toggle');
-  if (elem.innerHTML === 'Read') elem.innerHTML = 'Unread';
-  else elem.innerHTML = 'Read';
-}
 
 document.querySelector('#l-form').addEventListener('submit', (e) => {
   // Prevent actual submit
