@@ -54,7 +54,7 @@ class UI {
           <td class="has-text-centered">${book.title}</td>
           <td class="has-text-centered">${book.author}</td>
           <td class="has-text-centered">${book.pages}</td>
-          <td class="has-text-centered"><label class="checkbox"><input type="checkbox"></label</td>
+          <td class="has-text-centered"><button id="toggle" class="button is-small is-primary" onclick="change()" value="Read">Read</button></td>
           <td class="has-text-centered"><a href='#' id="delete" class='delete'>X</a></td>
       `;
 
@@ -116,3 +116,9 @@ document.querySelector('#bookList').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
   Store.removeBook(e.target.parentElement.parentElement.firstElementChild.textContent);
 });
+
+function change() {
+    let elem = document.getElementById("toggle");
+    if (elem.innerHTML=="Read") elem.innerHTML = "Unread";
+    else elem.innerHTML = "Read";
+}
