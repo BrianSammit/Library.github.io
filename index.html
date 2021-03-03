@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
     <title>My Library</title>
-</head>
-<body>
-  <section class="section">
-    <div class="container box">
-      <h1 class="title has-text-centered"><span class="has-text-primary">My</span>Library</h1> 
-      <div class="columns is-centered">  
-        <div class="column is-narrow">
-          <form id="l-form">
-            <div class="form field">
-              <label for="title" class="label">Title</label>
-              <input type="text" id="title" class="form-control input">
-            </div>
-            <div class="form-bulma field">
-              <label for="author" class="label">Author</label>
-              <input type="text" id="author" class="form-control input">
-            </div>
-            <div class="form-bulma field">
-              <label for="pages" class="label">Number of pages</label>
-              <input type="text" id="pages" class="form-control input">
-            </div>
-            <label class="checkbox">
-              <input type="checkbox" checked="checked">
-              <strong>Read</strong>
-            </label>
-            <input type="submit" class="button is-primary is-fullwidth" value="Save">   
-          </form>   
-          <table class="table mt-6">
-            <thead>
-              <tr>
-                <th style="width: 200px;" class="has-text-centered">Title</th>
-                <th style="width: 200px;" class="has-text-centered">Author</th>
-                <th style="width: 200px;" class="has-text-centered">Number of Pages</th>
-                <th style="width: 200px;" class="has-text-centered">Read?</th>
-              </tr>
-            </thead>
-            <tbody id="bookList"></tbody>
-          </table>
-          <button type="submit" class="button is-primary mt-3 is-normal is-pulled-right" onclick="showForm()" value="Add book">Add Book</button>   
+  </head>
+  <body>
+    <section class="section">
+      <div class="container box">
+        <h1 class="title has-text-centered">
+          <span class="has-text-primary">My</span>Library
+        </h1>
+        <div class="columns is-centered">
+          <div class="column is-narrow">
+            <form id="l-form">
+              <div class="form field">
+                <label for="title" class="label">Title</label>
+                <input type="text" id="title" class="form-control input" />
+              </div>
+              <div class="form-bulma field">
+                <label for="author" class="label">Author</label>
+                <input type="text" id="author" class="form-control input" />
+              </div>
+              <div class="form-bulma field">
+                <label for="pages" class="label">Number of pages</label>
+                <input type="text" id="pages" class="form-control input" />
+              </div>
+              <label class="checkbox">
+                <input type="checkbox" checked="checked" />
+                <strong>Read</strong>
+              </label>
+              <input
+                type="submit"
+                class="button is-primary is-fullwidth"
+                value="Save"
+              />
+            </form>
+            <table class="table mt-6">
+              <thead>
+                <tr>
+                  <th class="has-text-centered">Title</th>
+                  <th class="has-text-centered">Author</th>
+                  <th class="has-text-centered">Number of Pages</th>
+                  <th class="has-text-centered">Read?</th>
+                </tr>
+              </thead>
+              <tbody id="bookList"></tbody>
+            </table>
+            <button
+              type="submit"
+              class="button is-primary mt-3 is-normal is-pulled-right"
+              onclick="showForm()"
+              value="Add book"
+            >
+              Add Book
+            </button>
+          </div>
         </div>
-        
       </div>
-     
-    </div>
-  </section>
-  <script src="assets/js/library.js"></script>
-</body>
+    </section>
+    <script src="assets/js/library.js"></script>
+  </body>
 </html>
