@@ -55,7 +55,7 @@ class UI {
           <td class="has-text-centered">${book.author}</td>
           <td class="has-text-centered">${book.pages}</td>
           <td class="has-text-centered"><label class="checkbox"><input type="checkbox"></label</td>
-          <td class="has-text-centered"><a href='#' class='delete'>X</a></td>
+          <td class="has-text-centered"><a href='#' id="delete" class='delete'>X</a></td>
       `;
 
 
@@ -64,8 +64,10 @@ class UI {
 
   static deleteBook(el) {
     if (el.classList.contains('delete')) {
+      UI.showAlert('Book Removed', 'danger');
       el.parentElement.parentElement.remove();
     }
+
   }
 
   static showAlert(message, className) {
@@ -112,8 +114,5 @@ document.querySelector('#l-form').addEventListener('submit', (e) => {
 
 document.querySelector('#bookList').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
-
-  UI.showAlert('Book Removed', 'danger');
-
   Store.removeBook(e.target.parentElement.parentElement.firstElementChild.textContent);
 });
