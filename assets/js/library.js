@@ -1,9 +1,13 @@
 /* eslint-disable max-classes-per-file */
+
+const readInput = document.querySelector('#read');
 class Book {
-  constructor(title, author, pages) {
+  constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
+    this.id = title.slice(0, 3).toUpperCase() + pages;
   }
 }
 
@@ -47,17 +51,18 @@ class UI {
 
   static addBookToLibrary(book) {
     const list = document.querySelector('#bookList');
-
     const row = document.createElement('tr');
+    const read = readInput.checked;
+    const id = this.id;
 
     row.innerHTML = `
           <td class="has-text-centered">${book.title}</td>
           <td class="has-text-centered">${book.author}</td>
           <td class="has-text-centered">${book.pages}</td>
-          <td class="has-text-centered"><button id="toggle" class="button is-small is-primary" onclick="change()" value="Read">Read</button></td>
+          <td class="has-text-centered"><button class="button is-small is-primary" onclick="change()" value="Read">Read</button></td>
           <td class="has-text-centered"><a href='#' id="delete" class='delete'>X</a></td>
       `;
-
+    row.setAttribute('id', book.id)
 
     list.appendChild(row);
   }
