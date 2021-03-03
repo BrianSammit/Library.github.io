@@ -63,7 +63,6 @@ class UI {
           <td class="has-text-centered"><button class="button is-small is-primary" id=${book.id} value="Read">Read</button></td>
           <td class="has-text-centered"><a href='#' id="delete" class='delete'>X</a></td>
       `;
-    // row.setAttribute('id', book.id)
     list.appendChild(row);
     const td = document.getElementById(book.id);
     td.addEventListener('click', (e) => change(e));
