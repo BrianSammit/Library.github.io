@@ -1,0 +1,9 @@
+#l-form {
+  display: none;
+}
+
+.delete {
+  background-color: red;
+}
+
+th { width: 200px; }
